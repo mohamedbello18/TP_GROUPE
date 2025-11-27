@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no errors, send email
     if (empty($errors)) {
         // Configure these variables
-        $to = "votre-email@example.com"; // Replace with your email
+        $to = "mohamedbello717@gmail.com; // Replace with your email
         $email_subject = "Nouveau message de contact: $subject";
         $email_body = "
         Nom: $name
