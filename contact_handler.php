@@ -13,21 +13,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($message)) $errors[] = "Le message est requis.";
     
     if (empty($errors)) {
-        // Save to file instead of sending email
-        $data = [
-            'date' => date('Y-m-d H:i:s'),
-            'name' => $name,
-            'email' => $email,
-            'subject' => $subject,
-            'message' => $message
-        ];
+        // Create a more structured data entry
+        $timestamp = date('Y-m-d H:i:s');
+        $entry = "=== Nouveau Contact ===\n";
+        $entry .= "Date: $timestamp\n";
+        $entry .= "Nom: $name\n";
+        $entry .= "Email: $email\n";
+        $entry .= "Sujet: $subject\n";
+        $entry .= "Message: $message\n";
+        $entry .= "=====================\n\n";
         
-        file_put_contents('contact_submissions.txt', print_r($data, true) . "\n---\n", FILE_APPEND);
+        $filename = 'contact_submissions.txt';
         
-        $response = [
-            'success' => true,
-            'message' => 'Votre message a été enregistré! Nous vous contacterons bientôt.'
-        ];
+        // Try to save to file
+        if (file_put_contents($filename, $entry, FILE_APPEND | LOCK_EX)) {
+            $response = [
+                'success' => true,
+                'message' => 'Votre message a été enregistré! Nous vous contacterons bientôt.'
+            ];
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Erreur technique. Veuillez réessayer plus tard.'
+            ];
+        }
     } else {
         $response = [
             'success' => false,
