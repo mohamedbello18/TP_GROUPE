@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analystes Pro - Analyse Informatique et Programmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            bottom: -10px;
+            left: 20%;
+        }
+        .active-page {
+            color: #6366f1;
+            font-weight: 600;
+        }
+        .active-page:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600">Accueil</a>
+                    <a href="apropos.html" class="nav-link text-gray-700 hover:text-indigo-600">À Propos</a>
+                    <a href="equipe.html" class="nav-link text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                    <a href="competences.html" class="nav-link text-gray-700 hover:text-indigo-600">Compétences</a>
+                    <a href="projets.html" class="nav-link text-gray-700 hover:text-indigo-600">Projets</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+                <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À Propos</a>
+                <a href="equipe.html" class="block py-2 text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                <a href="competences.html" class="block py-2 text-gray-700 hover:text-indigo-600">Compétences</a>
+                <a href="projets.html" class="block py-2 text-gray-700 hover:text-indigo-600">Projets</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu de la page (sera différent pour chaque page) -->
+    <div id="page-content">
+        <!-- Section Hero (Accueil) -->
+        <section id="accueil" class="gradient-bg pt-24 pb-20 md:pt-32 md:pb-28">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Analyse Informatique & Programmation</h1>
+                        <p class="text-xl text-indigo-100 mb-8">Nous sommes un groupe de cinq juniors passionnés par l'analyse informatique et la programmation. Nous créons des solutions innovantes et efficaces.</p>
+                        <div class="flex space-x-4">
+                            <a href="projets.html" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Voir Nos Projets</a>
+                            <a href="contact.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold transition duration-300">Nous Contacter</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <div class="bg-white rounded-2xl p-6 shadow-2xl w-full max-w-md">
+                                <div class="flex justify-between mb-4">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4 text-green-400 font-mono text-sm h-64 overflow-y-auto">
+                                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">NotreGroupe</span> {</p>
+                                    <p class="ml-4"><span class="text-purple-400">constructor</span>() {</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.specialisation = <span class="text-green-400">"Analyse Informatique & Programmation"</span>;</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.membres = <span class="text-yellow-300">5</span>;</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.competences = [<span class="text-green-400">"Analyse Système"</span>, <span class="text-green-400">"Développement Web"</span>, <span class="text-green-400">"Bases de Données"</span>];</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.passion = <span class="text-green-400">"Créer des solutions innovantes"</span>;</p>
+                                    <p class="ml-4">}</p>
+                                    <p>}</p>
+                                    <p class="mt-4"><span class="text-gray-500">// Construisons quelque chose d'extraordinaire ensemble!</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À Propos -->
+        <section id="apropos" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">À Propos de Nous</h2>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Notre équipe" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Notre Mission</h3>
+                        <p class="text-gray-600 mb-6">Nous sommes un groupe de cinq juniors en <span class="font-semibold text-indigo-600">Analyse Informatique et Programmation</span>, passionnés par la création de solutions logicielles efficaces, évolutives et innovantes.</p>
+                        <p class="text-gray-600 mb-8">Notre équipe allie la pensée analytique à l'expertise technique pour résoudre des problèmes complexes et fournir des applications de haute qualité qui répondent aux besoins des clients.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-code text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Code Propre</h4>
+                                    <p class="text-gray-600 text-sm">Bien structuré et maintenable</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Analyse</h4>
+                                    <p class="text-gray-600 text-sm">Évaluation approfondie du système</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-database text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Bases de Données</h4>
+                                    <p class="text-gray-600 text-sm">Gestion efficace des données</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-mobile-alt text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Design Responsive</h4>
+                                    <p class="text-gray-600 text-sm">Fonctionne sur tous les appareils</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
+                    <p class="text-gray-400 mt-2">Analyse Informatique & Programmation</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Analystes Pro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
+                }
+            });
+            
+            // For mobile menu
+            const mobileLinks = document.querySelectorAll('#mobile-menu a');
+            mobileLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
