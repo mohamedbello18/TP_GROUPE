@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analystes Pro - Analyse Informatique et Programmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        .active-page {
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .active-page:after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600">Accueil</a>
+                    <a href="apropos.html" class="nav-link text-gray-700 hover:text-indigo-600">À Propos</a>
+                    <a href="equipe.html" class="nav-link text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                    <a href="competences.html" class="nav-link text-gray-700 hover:text-indigo-600">Compétences</a>
+                    <a href="projets.html" class="nav-link text-gray-700 hover:text-indigo-600">Projets</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+                <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À Propos</a>
+                <a href="equipe.html" class="block py-2 text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                <a href="competences.html" class="block py-2 text-gray-700 hover:text-indigo-600">Compétences</a>
+                <a href="projets.html" class="block py-2 text-gray-700 hover:text-indigo-600">Projets</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu spécifique à la page Compétences -->
+    <div class="pt-24">
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">Nos Compétences</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-6">Nous maîtrisons un large éventail de technologies et
+                        méthodologies pour répondre à tous vos besoins en analyse et développement.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-laptop-code text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Développement Web</h3>
+                        <p class="text-gray-600">Création d'applications web modernes et responsives avec les dernières
+                            technologies.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-database text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Bases de Données</h3>
+                        <p class="text-gray-600">Conception, optimisation et gestion de bases de données relationnelles
+                            et NoSQL.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">SQL Server</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-project-diagram text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Analyse Système</h3>
+                        <p class="text-gray-600">Analyse des besoins, modélisation des processus et conception
+                            d'architectures logicielles.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">UML</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Merise</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">BPMN</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Agile</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Développement Mobile</h3>
+                        <p class="text-gray-600">Création d'applications mobiles cross-platform avec des interfaces
+                            utilisateur intuitives.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React
+                                Native</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Flutter</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">iOS</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-server text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Backend & API</h3>
+                        <p class="text-gray-600">Développement de serveurs, API RESTful et microservices avec une
+                            attention particulière à la sécurité.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Express</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Django</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Laravel</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cloud text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Cloud & DevOps</h3>
+                        <p class="text-gray-600">Déploiement, gestion et mise à l'échelle d'applications dans des
+                            environnements cloud modernes.</p>
+                        <div class="mt-6 flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">AWS</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Docker</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Git</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-8 text-white max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Notre Approche d'Apprentissage</h2>
+                    <p class="mb-4 text-center">En tant que juniors, nous valorisons particulièrement l'apprentissage
+                        continu. Nous nous engageons à rester à jour avec les dernières technologies et meilleures, hautes
+                        pratiques du secteur.</p>
+                    <p class="text-center">Notre statut de débutants nous permet d'aborder chaque projet avec curiosité,
+                        flexibilité et une volonté d'expérimenter de nouvelles solutions pour répondre aux défis
+                        techniques.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
+                    <p class="text-gray-400 mt-2">Analyse Informatique & Programmation</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Analystes Pro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
+                }
+            });
+
+            // For mobile menu
+            const mobileLinks = document.querySelectorAll('#mobile-menu a');
+            mobileLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
