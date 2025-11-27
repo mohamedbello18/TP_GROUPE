@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +16,6 @@
         }
         .text-gradient {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .card-hover {
@@ -56,6 +54,13 @@
             bottom: -10px;
             left: 20%;
         }
+        .active-page {
+            color: #6366f1;
+            font-weight: 600;
+        }
+        .active-page:after {
+            width: 100%;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -64,15 +69,15 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold text-gradient">Analystes Pro</div>
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#accueil" class="nav-link text-gray-700 hover:text-indigo-600">Accueil</a>
-                    <a href="#apropos" class="nav-link text-gray-700 hover:text-indigo-600">À Propos</a>
-                    <a href="#equipe" class="nav-link text-gray-700 hover:text-indigo-600">Notre Équipe</a>
-                    <a href="#competences" class="nav-link text-gray-700 hover:text-indigo-600">Compétences</a>
-                    <a href="#projets" class="nav-link text-gray-700 hover:text-indigo-600">Projets</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600">Accueil</a>
+                    <a href="apropos.html" class="nav-link text-gray-700 hover:text-indigo-600">À Propos</a>
+                    <a href="equipe.html" class="nav-link text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                    <a href="competences.html" class="nav-link text-gray-700 hover:text-indigo-600">Compétences</a>
+                    <a href="projets.html" class="nav-link text-gray-700 hover:text-indigo-600">Projets</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
                 </div>
                 <div class="md:hidden">
                     <button id="menu-toggle" class="text-gray-700 focus:outline-none">
@@ -82,428 +87,120 @@
             </div>
             <!-- Menu Mobile -->
             <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="#accueil" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
-                <a href="#apropos" class="block py-2 text-gray-700 hover:text-indigo-600">À Propos</a>
-                <a href="#equipe" class="block py-2 text-gray-700 hover:text-indigo-600">Notre Équipe</a>
-                <a href="#competences" class="block py-2 text-gray-700 hover:text-indigo-600">Compétences</a>
-                <a href="#projets" class="block py-2 text-gray-700 hover:text-indigo-600">Projets</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+                <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À Propos</a>
+                <a href="equipe.html" class="block py-2 text-gray-700 hover:text-indigo-600">Notre Équipe</a>
+                <a href="competences.html" class="block py-2 text-gray-700 hover:text-indigo-600">Compétences</a>
+                <a href="projets.html" class="block py-2 text-gray-700 hover:text-indigo-600">Projets</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Section Hero -->
-    <section id="accueil" class="gradient-bg pt-24 pb-20 md:pt-32 md:pb-28">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Analyse Informatique & Programmation</h1>
-                    <p class="text-xl text-indigo-100 mb-8">Nous sommes un groupe de cinq juniors passionnés par l'analyse informatique et la programmation. Nous créons des solutions innovantes et efficaces.</p>
-                    <div class="flex space-x-4">
-                        <a href="#projets" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Voir Nos Projets</a>
-                        <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold transition duration-300">Nous Contacter</a>
+    <!-- Contenu de la page (sera différent pour chaque page) -->
+    <div id="page-content">
+        <!-- Section Hero (Accueil) -->
+        <section id="accueil" class="gradient-bg pt-24 pb-20 md:pt-32 md:pb-28">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Analyse Informatique & Programmation</h1>
+                        <p class="text-xl text-indigo-100 mb-8">Nous sommes un groupe de cinq juniors passionnés par l'analyse informatique et la programmation. Nous créons des solutions innovantes et efficaces.</p>
+                        <div class="flex space-x-4">
+                            <a href="projets.html" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Voir Nos Projets</a>
+                            <a href="contact.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold transition duration-300">Nous Contacter</a>
+                        </div>
                     </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="bg-white rounded-2xl p-6 shadow-2xl w-full max-w-md">
-                            <div class="flex justify-between mb-4">
-                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <div class="bg-gray-800 rounded-lg p-4 text-green-400 font-mono text-sm h-64 overflow-y-auto">
-                                <p><span class="text-purple-400">class</span> <span class="text-yellow-300">NotreGroupe</span> {</p>
-                                <p class="ml-4"><span class="text-purple-400">constructor</span>() {</p>
-                                <p class="ml-8"><span class="text-blue-400">this</span>.specialisation = <span class="text-green-400">"Analyse Informatique & Programmation"</span>;</p>
-                                <p class="ml-8"><span class="text-blue-400">this</span>.membres = <span class="text-yellow-300">5</span>;</p>
-                                <p class="ml-8"><span class="text-blue-400">this</span>.competences = [<span class="text-green-400">"Analyse Système"</span>, <span class="text-green-400">"Développement Web"</span>, <span class="text-green-400">"Bases de Données"</span>];</p>
-                                <p class="ml-8"><span class="text-blue-400">this</span>.passion = <span class="text-green-400">"Créer des solutions innovantes"</span>;</p>
-                                <p class="ml-4">}</p>
-                                <p>}</p>
-                                <p class="mt-4"><span class="text-gray-500">// Construisons quelque chose d'extraordinaire ensemble!</span></p>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <div class="bg-white rounded-2xl p-6 shadow-2xl w-full max-w-md">
+                                <div class="flex justify-between mb-4">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4 text-green-400 font-mono text-sm h-64 overflow-y-auto">
+                                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">NotreGroupe</span> {</p>
+                                    <p class="ml-4"><span class="text-purple-400">constructor</span>() {</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.specialisation = <span class="text-green-400">"Analyse Informatique & Programmation"</span>;</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.membres = <span class="text-yellow-300">5</span>;</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.competences = [<span class="text-green-400">"Analyse Système"</span>, <span class="text-green-400">"Développement Web"</span>, <span class="text-green-400">"Bases de Données"</span>];</p>
+                                    <p class="ml-8"><span class="text-blue-400">this</span>.passion = <span class="text-green-400">"Créer des solutions innovantes"</span>;</p>
+                                    <p class="ml-4">}</p>
+                                    <p>}</p>
+                                    <p class="mt-4"><span class="text-gray-500">// Construisons quelque chose d'extraordinaire ensemble!</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section À Propos -->
-    <section id="apropos" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">À Propos de Nous</h2>
-            </div>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Notre équipe" class="rounded-lg shadow-lg">
+        <!-- Section À Propos -->
+        <section id="apropos" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">À Propos de Nous</h2>
                 </div>
-                <div class="md:w-1/2 md:pl-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Notre Mission</h3>
-                    <p class="text-gray-600 mb-6">Nous sommes un groupe de cinq juniors en <span class="font-semibold text-indigo-600">Analyse Informatique et Programmation</span>, passionnés par la création de solutions logicielles efficaces, évolutives et innovantes.</p>
-                    <p class="text-gray-600 mb-8">Notre équipe allie la pensée analytique à l'expertise technique pour résoudre des problèmes complexes et fournir des applications de haute qualité qui répondent aux besoins des clients.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="flex items-center">
-                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-code text-indigo-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Code Propre</h4>
-                                <p class="text-gray-600 text-sm">Bien structuré et maintenable</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Analyse</h4>
-                                <p class="text-gray-600 text-sm">Évaluation approfondie du système</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-database text-indigo-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Bases de Données</h4>
-                                <p class="text-gray-600 text-sm">Gestion efficace des données</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-mobile-alt text-indigo-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Design Responsive</h4>
-                                <p class="text-gray-600 text-sm">Fonctionne sur tous les appareils</p>
-                            </div>
-                        </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Notre équipe" class="rounded-lg shadow-lg">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Notre Équipe -->
-    <section id="equipe" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">Notre Équipe</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Notre équipe diversifiée d'analystes et programmeurs informatiques réunit un large éventail de compétences et d'expertise pour fournir des résultats exceptionnels.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <!-- Membre 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600 text-3xl"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Alexandre Martin</h3>
-                        <p class="text-indigo-600 text-center mb-4">Analyste Système Principal</p>
-                        <p class="text-gray-600 text-center mb-6">Spécialisé dans l'analyse des besoins et la conception de systèmes avec expertise en UML et modélisation des processus métier.</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Membre 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600 text-3xl"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Sophie Bernard</h3>
-                        <p class="text-indigo-600 text-center mb-4">Développeuse Full-Stack</p>
-                        <p class="text-gray-600 text-center mb-6">Expérimentée dans les frameworks JavaScript, la conception de bases de données et la création d'applications web responsives.</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Membre 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600 text-3xl"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Thomas Leroy</h3>
-                        <p class="text-indigo-600 text-center mb-4">Spécialiste Bases de Données</p>
-                        <p class="text-gray-600 text-center mb-6">Expert en SQL, normalisation de bases de données et modélisation de données avec un focus sur l'optimisation des performances.</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Membre 4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600 text-3xl"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Claire Dubois</h3>
-                        <p class="text-indigo-600 text-center mb-4">Designer UI/UX & Analyste</p>
-                        <p class="text-gray-600 text-center mb-6">Combine le design thinking avec l'analyse technique pour créer des interfaces intuitives et conviviales.</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Membre 5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-                    <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600 text-3xl"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Lucas Moreau</h3>
-                        <p class="text-indigo-600 text-center mb-4">Développeur Back-End</p>
-                        <p class="text-gray-600 text-center mb-6">Spécialiste des architectures serveur, API REST et microservices avec une expertise en sécurité des applications.</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Compétences -->
-    <section id="competences" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">Nos Compétences</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Nous maîtrisons un large éventail de technologies et méthodologies pour répondre à tous vos besoins en analyse et développement.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
-                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-laptop-code text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Développement Web</h3>
-                    <p class="text-gray-600">Création d'applications web modernes et responsives avec les dernières technologies.</p>
-                    <div class="mt-6 flex flex-wrap justify-center gap-2">
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
-                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-database text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Bases de Données</h3>
-                    <p class="text-gray-600">Conception, optimisation et gestion de bases de données relationnelles et NoSQL.</p>
-                    <div class="mt-6 flex flex-wrap justify-center gap-2">
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">SQL Server</span>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
-                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-project-diagram text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Analyse Système</h3>
-                    <p class="text-gray-600">Analyse des besoins, modélisation des processus et conception d'architectures logicielles.</p>
-                    <div class="mt-6 flex flex-wrap justify-center gap-2">
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">UML</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Merise</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">BPMN</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Agile</span>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl text-center card-hover">
-                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Développement Mobile</h3>
-                    <p class="text-gray-600">Création d'applications mobiles cross-platform avec des interfaces utilisateur intuitives.</p>
-                    <div class="mt-6 flex flex-wrap justify-center gap-2">
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React Native</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Flutter</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">iOS</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Android</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Projets -->
-    <section id="projets" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">Nos Projets</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Découvrez certains de nos projets récents qui mettent en valeur notre expertise en analyse informatique et programmation.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projet 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-indigo-600 flex items-center justify-center">
-                        <i class="fas fa-chart-bar text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tableau de Bord Analytics</h3>
-                        <p class="text-gray-600 mb-4">Un tableau de bord complet pour visualiser les métriques commerciales et KPI avec des graphiques interactifs et des données en temps réel.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                        </div>
-                        <a href="#" class="text-indigo-600 font-semibold flex items-center">Voir les Détails <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Projet 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-purple-600 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Plateforme E-commerce</h3>
-                        <p class="text-gray-600 mb-4">Une boutique en ligne complète avec gestion des produits, panier, intégration de paiement et panneau d'administration.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Laravel</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                        </div>
-                        <a href="#" class="text-purple-600 font-semibold flex items-center">Voir les Détails <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Projet 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-green-600 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Application de Gestion de Tâches</h3>
-                        <p class="text-gray-600 mb-4">Une application mobile multiplateforme pour la gestion de projets et de tâches avec fonctionnalités de collaboration.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">React Native</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Firebase</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Redux</span>
-                        </div>
-                        <a href="#" class="text-green-600 font-semibold flex items-center">Voir les Détails <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">Contactez-Nous</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Vous avez un projet en tête? N'hésitez pas à nous contacter. Nous serions ravis de discuter de la manière dont nous pouvons vous aider.</p>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
-                    <div class="bg-gray-50 rounded-xl p-8 h-full">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Informations de Contact</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Notre Mission</h3>
+                        <p class="text-gray-600 mb-6">Nous sommes un groupe de cinq juniors en <span class="font-semibold text-indigo-600">Analyse Informatique et Programmation</span>, passionnés par la création de solutions logicielles efficaces, évolutives et innovantes.</p>
+                        <p class="text-gray-600 mb-8">Notre équipe allie la pensée analytique à l'expertise technique pour résoudre des problèmes complexes et fournir des applications de haute qualité qui répondent aux besoins des clients.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-center">
                                 <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                                    <i class="fas fa-code text-indigo-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Adresse</h4>
-                                    <p class="text-gray-600">123 Rue de la Programmation<br>75000 Paris, France</p>
+                                    <h4 class="font-semibold text-gray-800">Code Propre</h4>
+                                    <p class="text-gray-600 text-sm">Bien structuré et maintenable</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-phone text-indigo-600"></i>
+                                    <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Téléphone</h4>
-                                    <p class="text-gray-600">+33 1 23 45 67 89</p>
+                                    <h4 class="font-semibold text-gray-800">Analyse</h4>
+                                    <p class="text-gray-600 text-sm">Évaluation approfondie du système</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-envelope text-indigo-600"></i>
+                                    <i class="fas fa-database text-indigo-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Email</h4>
-                                    <p class="text-gray-600">contact@analystespro.fr</p>
+                                    <h4 class="font-semibold text-gray-800">Bases de Données</h4>
+                                    <p class="text-gray-600 text-sm">Gestion efficace des données</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-clock text-indigo-600"></i>
+                                    <i class="fas fa-mobile-alt text-indigo-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Horaires</h4>
-                                    <p class="text-gray-600">Lun - Ven: 9h00 - 18h00</p>
+                                    <h4 class="font-semibold text-gray-800">Design Responsive</h4>
+                                    <p class="text-gray-600 text-sm">Fonctionne sur tous les appareils</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2 md:pl-8">
-                    <form class="bg-gray-50 rounded-xl p-8">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-semibold mb-2">Nom Complet</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Votre nom">
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-semibold mb-2">Adresse Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Votre email">
-                        </div>
-                        <div class="mb-6">
-                            <label for="subject" class="block text-gray-700 font-semibold mb-2">Sujet</label>
-                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Sujet du message">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Votre message"></textarea>
-                        </div>
-                        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 w-full">Envoyer le Message</button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="text-2xl font-bold text-gradient">Analystes Pro</div>
+                    <a href="index.html" class="text-2xl font-bold text-gradient">Analystes Pro</a>
                     <p class="text-gray-400 mt-2">Analyse Informatique & Programmation</p>
                 </div>
                 <div class="flex space-x-6">
@@ -526,26 +223,24 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
+                }
+            });
+            
+            // For mobile menu
+            const mobileLinks = document.querySelectorAll('#mobile-menu a');
+            mobileLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active-page');
                 }
             });
         });
