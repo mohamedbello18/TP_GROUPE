@@ -2,10 +2,10 @@
 header('Content-Type: application/json');
 
 // Récupérer les infos de connexion depuis les variables d'environnement définies dans docker-compose.yml
-$host = getenv('DB_HOST') ?: 'db';           // 'db' est le nom du service base dans docker-compose
-$dbname = getenv('DB_NAME') ?: 'tp-groupe';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASS') ?: 'rootpassword';
+$host = getenv('DB_HOST') ?: 'sql204.infinityfree.com';           // 'db' est le nom du service base dans docker-compose
+$dbname = getenv('DB_NAME') ?: 'if0_40542812_tp_groupe';
+$username = getenv('DB_USER') ?: 'if0_40542812';
+$password = getenv('DB_PASS') ?: 'iDqKrepEsjy2';
 
 try {
     // Connexion PDO à la base MySQL en utilisant les variables d'env
