@@ -1,39 +1,31 @@
 version: "3.8"
 
 services:
-  web:
+  app:
     build: .
-    container_name: php-app
     ports:
       - "8080:80"
-    volumes:
-      - .:/var/www/html
     depends_on:
       - db
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_NAME=tp-groupe
+      - DB_USER=root
+      - DB_PASS=rootpassword
 
   db:
     image: mysql:8.0
-    container_name: mysql-db
-    restart: always
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: tp-groupe
       MYSQL_USER: root
-      MYSQL_PASSWORD: 
-    ports:
-      - "3307:3306"
+      MYSQL_PASSWORD: rootpassword
     volumes:
-      - db_data:/var/lib/mysql
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    depends_on:
-      - db
-    ports:
-      - "8081:80"
-    environment:
-      PMA_HOST: db
+      - mysql_data:/var/lib/mysql
 
 volumes:
-  db_data:
+  mysql_data:
