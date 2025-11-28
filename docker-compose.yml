@@ -17,9 +17,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: app_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user123
+      MYSQL_DATABASE: tp-groupe
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
     ports:
       - "3307:3306"
     volumes:
